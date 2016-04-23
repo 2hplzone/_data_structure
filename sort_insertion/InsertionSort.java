@@ -10,13 +10,13 @@ public class InsertionSort {
 			iKey = iArr[i];
 			k=i-1;
 			
-			System.out.println(String.format("-- %d¹øÂ° °ª: %d", i, iKey));
+			System.out.println(String.format("-- %dë²ˆì§¸ ê°’: %d", i, iKey));
 			
-			//i-1,i-2,...¹øÂ° °ªÀÌ i¹øÂ° °ª º¸´Ù Å¬ °æ¿ì
+			//i-1,i-2,...ë²ˆì§¸ ê°’ì´ ië²ˆì§¸ ê°’ ë³´ë‹¤ í´ ê²½ìš°
 			while(k >=0 && iArr[k] > iKey){
-				System.out.println(String.format("%d¹øÂ° °ª: %d", k, iArr[k]));
+				System.out.println(String.format("%dë²ˆì§¸ ê°’: %d", k, iArr[k]));
 				
-				//i¹øÂ°¿¡ i-1¹øÂ° °ª ÀúÀå
+				//ië²ˆì§¸ì— i-1ë²ˆì§¸ ê°’ ì €ì¥
 				iArr[k+1] = iArr[k];
 				k--;
 			}
@@ -30,7 +30,7 @@ public class InsertionSort {
 	private void printArr(int[] iArr, int iNum){
 		int iSize = iArr.length;
 		for(int i=0; i<iSize; i++){
-			if(i == 0)System.out.print(String.format("## %d¹øÂ° Á¤·Ä --> %d, ", iNum+1, iArr[i]));
+			if(i == 0)System.out.print(String.format("## %dë²ˆì§¸ ì •ë ¬ --> %d, ", iNum+1, iArr[i]));
 			else if(i == iSize-1)System.out.println(iArr[i]);
 			else System.out.print(iArr[i]+", ");
 		}

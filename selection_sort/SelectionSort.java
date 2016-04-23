@@ -3,16 +3,16 @@ package selection_sort;
 public class SelectionSort {
 	private int m_iCount;
 	  
-	//iArr: Á¤·ÄÇÒ ¹è¿­
+	//iArr: ì •ë ¬í•  ë°°ì—´
     public void sort(int[] iArr){
     	int iResult = 0;
     	int iSize = iArr.length;
     	
         for(int i=0; i<iSize-1; i++){
         	for(int k=i+1; k<iSize; k++){
-        		//¹è¿­ÀÇ i¹øÂ° °ª°ú i+i °ªÀ» ºñ±³ÇÏ¿©
-        		//ÀÛÀº°ªÀ» Å«°ª À§Ä¡·Î ÀÌµ¿,
-        		//Å«°ªÀº ÀÛÀº°ª À§Ä¡·Î ÀÌµ¿.
+        		//ë°°ì—´ì˜ ië²ˆì§¸ ê°’ê³¼ i+i ê°’ì„ ë¹„êµí•˜ì—¬
+        		//ì‘ì€ê°’ì„ í°ê°’ ìœ„ì¹˜ë¡œ ì´ë™,
+        		//í°ê°’ì€ ì‘ì€ê°’ ìœ„ì¹˜ë¡œ ì´ë™.
         		if(iArr[i]>iArr[k]){
         			changeValue(iArr, k, i);
         		}
@@ -20,9 +20,9 @@ public class SelectionSort {
         }
     }
     
-    //iArr: Á¤·ÄÀ» Àû¿ëÇÒ ¹è¿­
-    //iSmal: °ªÀÌ ÀÛÀº ¹è¿­ÀÇ À§Ä¡
-    //iBic: °ªÀÌ Å« ¹è¿­ÀÇ À§Ä¡
+    //iArr: ì •ë ¬ì„ ì ìš©í•  ë°°ì—´
+    //iSmal: ê°’ì´ ì‘ì€ ë°°ì—´ì˜ ìœ„ì¹˜
+    //iBic: ê°’ì´ í° ë°°ì—´ì˜ ìœ„ì¹˜
     private void changeValue(int[] iArr, int iSmall, int iBig){
     	int iTemp = 0;
     	
@@ -30,13 +30,13 @@ public class SelectionSort {
     	iArr[iSmall] = iArr[iBig];
     	iArr[iBig] = iTemp;
     	
-    	if(m_iCount<9)System.out.print(String.format("0%d ¹øÂ° Á¤·Ä: ", ++m_iCount));
-    	else System.out.print(String.format("%d ¹øÂ° Á¤·Ä: ", ++m_iCount));
+    	if(m_iCount<9)System.out.print(String.format("0%d ë²ˆì§¸ ì •ë ¬: ", ++m_iCount));
+    	else System.out.print(String.format("%d ë²ˆì§¸ ì •ë ¬: ", ++m_iCount));
     	
     	printArray(iArr);
     }
     
-    //iArr: Ãâ·ÂÇÒ ¹è¿­
+    //iArr: ì¶œë ¥í•  ë°°ì—´
     public void printArray(int[] iArr){
     	int iSize = iArr.length;
     	for(int i=0; i<iSize; i++){

@@ -19,15 +19,15 @@ public class BubleSort {
 				
 		for(int i=0;i<iSizeMin1; i++){
 			sArr = getArray(iArr);
-			System.out.println(String.format("=== %d ¹øÂ° Á¤·Ä(%s) ===", i+1, sArr));
+			System.out.println(String.format("=== %d ë²ˆì§¸ ì •ë ¬(%s) ===", i+1, sArr));
 			for(int k=0; k<iSizeMin1-i; k++){
 				iNum1 = iArr[k];
 				iNum2 = iArr[k+1];
 				//System.out.println(String.format("iNum1: %d, iNum2: %d", iNum1,iNum2));
-				//¹è¿­ÀÇ i¹øÂ° °ª°ú i+1 ºñ±³
-				//i¹øÂ° °ªÀÌ i+1¹øÂ° °ªº¸´Ù Å©¸é
+				//ë°°ì—´ì˜ ië²ˆì§¸ ê°’ê³¼ i+1 ë¹„êµ
+				//ië²ˆì§¸ ê°’ì´ i+1ë²ˆì§¸ ê°’ë³´ë‹¤ í¬ë©´
 				if(iNum1 > iNum2){
-					//i¹øÂ°¿Í i+1¹øÂ° °ª ¹Ù²Ù±â
+					//ië²ˆì§¸ì™€ i+1ë²ˆì§¸ ê°’ ë°”ê¾¸ê¸°
 					iArr[k+1]=iNum1;
 					iArr[k]=iNum2;
 				}

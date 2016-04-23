@@ -1,42 +1,42 @@
 package search_binary;
 
 public class BinarySearch {
-	//°Ë»ö ¹üÀ§ÀÇ Áß¾Ó ¿ø¼Ò°ª°ú °Ë»öÇÏ°íÀÚ ÇÏ°íÀÚ ÇÏ´Â °ªÀ» ºñ±³ÇÔ
+	//ê²€ìƒ‰ ë²”ìœ„ì˜ ì¤‘ì•™ ì›ì†Œê°’ê³¼ ê²€ìƒ‰í•˜ê³ ìž í•˜ê³ ìž í•˜ëŠ” ê°’ì„ ë¹„êµí•¨
 	private int m_iCount;		
     
     public void print(String str){
         System.out.println(String.format("(%d)--> %s",++m_iCount, str));
     }
     
-    //iArr: °Ë»ö ¹üÀ§
-    //iFirst: °Ë»ö ¹üÀ§ ¸Ç ¿ÞÂÊ ¿ø¼Ò
-    //iLast: °Ë»ö ¹üÀ§ ¸Ç ¿À´ÃÂÊ ¿ø¼Ò
-    //iValue: °Ë»ö ÇÏ°íÀÚ ÇÏ´Â °ª
+    //iArr: ê²€ìƒ‰ ë²”ìœ„
+    //iFirst: ê²€ìƒ‰ ë²”ìœ„ ë§¨ ì™¼ìª½ ì›ì†Œ
+    //iLast: ê²€ìƒ‰ ë²”ìœ„ ë§¨ ì˜¤ëŠ˜ìª½ ì›ì†Œ
+    //iValue: ê²€ìƒ‰ í•˜ê³ ìž í•˜ëŠ” ê°’
     public int search(int[] iArr, int iFirst, int iLast, int iValue){
         if(iLast >= iFirst){
-        	//°Ë»ö ¹üÀ§ Áß¾Ó ¿ø¼Ò
+        	//ê²€ìƒ‰ ë²”ìœ„ ì¤‘ì•™ ì›ì†Œ
         	int iMiddle = iFirst+((iLast - iFirst)/2);
         	
-            //Áß¾Ó ¿ø¼Ò¿¡ ÇØ´çµÇ´Â °ª 
+            //ì¤‘ì•™ ì›ì†Œì— í•´ë‹¹ë˜ëŠ” ê°’ 
             int iArrResult = iArr[iMiddle];
             print(String.format("iFirst: %d, iMiddle: %d, iLast: %d, iArrResult: %d, iValue: %d",iFirst, iMiddle, iLast, iArrResult, iValue));
             
             if( iArrResult == iValue){
-            	//Áß¾Ó ¿ø¼Ò¿¡ ÇØ´çµÇ´Â °ªÀÌ °Ë»öÇÏ°íÀÚ ÇÏ´Â °ª°ú  
-            	//µ¿ÀÏÇÏ¸é °á°ú ¹ÝÈ¯ÇÔ.
+            	//ì¤‘ì•™ ì›ì†Œì— í•´ë‹¹ë˜ëŠ” ê°’ì´ ê²€ìƒ‰í•˜ê³ ìž í•˜ëŠ” ê°’ê³¼  
+            	//ë™ì¼í•˜ë©´ ê²°ê³¼ ë°˜í™˜í•¨.
             	return iMiddle;
             }else if(iArrResult > iValue){
-            	//Áß¾Ó ¿ø¼Ò¿¡ ÇØ´çµÇ´Â °ªÀÌ °Ë»öÇÏ°íÀÚ ÇÏ´Â °ª º¸´Ù
-            	//ÀÛÀ¸¸é Áß¾Ó¿ø¼Òº¸´Ù ÀÛÀº ¿ø¼ÒµéÀÇ ¹üÀ§¿¡¼­ Àç°Ë»ö
+            	//ì¤‘ì•™ ì›ì†Œì— í•´ë‹¹ë˜ëŠ” ê°’ì´ ê²€ìƒ‰í•˜ê³ ìž í•˜ëŠ” ê°’ ë³´ë‹¤
+            	//ìž‘ìœ¼ë©´ ì¤‘ì•™ì›ì†Œë³´ë‹¤ ìž‘ì€ ì›ì†Œë“¤ì˜ ë²”ìœ„ì—ì„œ ìž¬ê²€ìƒ‰
                 return search(iArr, 0, iMiddle-1, iValue);
             }else if(iArrResult < iValue){
-            	//°Ë»ö¹üÀ§ Áß¾Ó¿¡ À§Ä¡ÇÑ °ªº¸´Ù °Ë»ö ÇÏ°íÀÚ ÇÏ´Â °ªÀÌ
-            	//Å©¸é Áß¾Ó¿ø¼Ò º¸´Ù Å« ¿ø¼ÒµéÀÇ ¹üÀ§¿¡¼­ Àç°Ë»ö
+            	//ê²€ìƒ‰ë²”ìœ„ ì¤‘ì•™ì— ìœ„ì¹˜í•œ ê°’ë³´ë‹¤ ê²€ìƒ‰ í•˜ê³ ìž í•˜ëŠ” ê°’ì´
+            	//í¬ë©´ ì¤‘ì•™ì›ì†Œ ë³´ë‹¤ í° ì›ì†Œë“¤ì˜ ë²”ìœ„ì—ì„œ ìž¬ê²€ìƒ‰
                 return search(iArr, iMiddle+1, iLast, iValue);
             }      
         }
         
-        //°Ë»ö ¹üÀ§³»¿¡ ¾øÀ¸¸é -1À» ¹ÝÈ¯ÇÔ.
+        //ê²€ìƒ‰ ë²”ìœ„ë‚´ì— ì—†ìœ¼ë©´ -1ì„ ë°˜í™˜í•¨.
     	return -1;
     }
 }
